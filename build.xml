@@ -4,7 +4,7 @@
 
     <taskdef resource="net/sf/antcontrib/antcontrib.properties">
         <classpath>
-            <pathelement location="../lib/ant-contrib.jar"/>
+            <pathelement location="/usr/share/ant/lib/ant-contrib.jar"/>
         </classpath>
     </taskdef>
 
@@ -62,30 +62,11 @@
 
     <target name="compile" depends="thirdparty" description="Compile sources">
         <mkdir dir="bin" />
-
-        <property environment="env" />
-        <property name="java_home" value="${env.JAVA_HOME}" />
-
-        <condition property="linux">
-            <os family="unix" />
-        </condition>
-        <fail if="linux" unless="java_home" 
-              message="The JAVA_HOME variable must be set to the location of a full JDK. For instance, on Ubuntu Linux, this might be /usr/lib/jvm/java-6-sun." />
-
-        <condition property="windows"><os family="windows" /></condition>
-        <fail if="windows" unless="java_home" 
-            message="The JAVA_HOME variable must be set to the location of a full JDK. For instance, on Windows, this might be c:\jdk1.6.0_18." />
-
-        <echo>Classpath is ${classpath}</echo>
         <javac srcdir="src" 
-                debug="true"
-                debuglevel="lines,vars,source"
-            source="1.6"
-            target="1.6"
 	        destdir="bin" 
-            bootclasspath="${bootclass.path}"
 	        includeAntRuntime="false"
-	        classpath="${uecide.path}/uecide.jar; ${env.JAVA_HOME}/lib/tools.jar${classpath}" />
+	        classpath="${uecide.path}/uecide.jar"
+        />
     </target>
    
     <target name="zipfix" if="thirdparty.jars">
@@ -93,9 +74,7 @@
         <for list="${thirdparty.jars}" delimiter="," param="url">
             <sequential>
                 <local name="tbn" />
-                <echo>@{url}</echo>
                 <basename file="@{url}" property="tbn" />
-                <echo>${tbn}</echo>
                 <unzip dest="zipfix/extract" src="thirdparty/${tbn}" overwrite="true"/>
             </sequential>
         </for>
