@@ -1,12 +1,6 @@
-gitlink (1.0.1) uecide; urgency=low
-
-  * Added basic key generation
-
- -- Matt Jenkins <matt@majenko.co.uk>  Tue, 27 Jan 2015 16:51:34 +0000
-
 gitlink (1.0.0) uecide; urgency=low
 
-  * Initial Release.
+  * Initial Import
 
- -- Matt Jenkins <matt@majenko.co.uk>  Tue, 27 Jan 2015 16:51:34 +0000
+ -- Matt Jenkins <matt@majenko.co.uk>  Sun, 30 Aug 2015 15:58:36 +0100
 
