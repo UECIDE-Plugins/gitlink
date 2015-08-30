@@ -1,0 +1,16 @@
+Source: gitlink
+Section: plugins
+Priority: optional
+Maintainer: Matt Jenkins <matt@majenko.co.uk>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.5
+
+Package: gitlink
+Section: plugins
+Architecture: all
+XBSC-Group: Programming
+Description: Git Link
+ Integrate with Git repositories
+
+
+

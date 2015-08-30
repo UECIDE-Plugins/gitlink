@@ -1,0 +1,7 @@
+version=0.8.8f
+thirdparty.jars=https://repo.eclipse.org/content/groups/releases//org/eclipse/jgit/org.eclipse.jgit/3.6.2.201501210735-r/org.eclipse.jgit-3.6.2.201501210735-r.jar
+version.minimum=0.8.7z31
+description=Keep your precious sketch on Github.<br/>Check in changes, collaborate with others, etc.
+# Path relative to a plugin directory, not this directory
+uecide.path=/usr/share/uecide
+install.path=/home/matt/.uecide/plugins
